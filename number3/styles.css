@@ -335,7 +335,17 @@ main {
 
 .btn:focus {
     outline: none;
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Only show focus styles for keyboard navigation on buttons */
+.btn:focus-visible {
     box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3), 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Remove focus styles for mouse users on buttons */
+.btn:focus:not(:focus-visible) {
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
 }
 
 .prev {
@@ -351,8 +361,12 @@ main {
     box-shadow: 0 6px 15px rgba(72, 219, 251, 0.4);
 }
 
-.prev:focus {
+.prev:focus-visible {
     box-shadow: 0 0 0 3px rgba(72, 219, 251, 0.3), 0 6px 15px rgba(72, 219, 251, 0.4);
+}
+
+.prev:focus:not(:focus-visible) {
+    box-shadow: 0 4px 10px rgba(72, 219, 251, 0.3);
 }
 
 .restart {
@@ -368,14 +382,34 @@ main {
     box-shadow: 0 6px 15px rgba(29, 209, 161, 0.4);
 }
 
-.restart:focus {
+.restart:focus-visible {
     box-shadow: 0 0 0 3px rgba(29, 209, 161, 0.3), 0 6px 15px rgba(29, 209, 161, 0.4);
+}
+
+.restart:focus:not(:focus-visible) {
+    box-shadow: 0 4px 10px rgba(29, 209, 161, 0.3);
 }
 
 /* Focus styles for keyboard navigation */
 :focus {
-    outline: 3px solid var(--secondary-color);
+    outline: none; /* Remove default outline */
+}
+
+/* Only show focus styles when using keyboard navigation */
+:focus-visible {
+    outline: 3px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* Remove focus styles for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Recipe card specific focus styles */
+.recipe:focus, .step:focus, .img-container:focus {
+    outline: none;
 }
 
 /* Skip to content link for keyboard users */
@@ -394,6 +428,8 @@ main {
 
 .skip-link:focus {
     top: 0;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
 }
 
 /* Ensure proper focus management */

@@ -174,7 +174,9 @@
                         history.pushState(null, null, targetId);
                         
                         // Set focus to the new section for accessibility
-                        targetSection.focus();
+                        // Use programmatic focus to avoid visible focus ring
+                        targetSection.setAttribute('tabindex', '-1');
+                        targetSection.focus({preventScroll: true});
                         
                         // Remove entrance animation class after animation completes
                         setTimeout(() => {
@@ -199,7 +201,8 @@
                     targetSection.classList.add('active');
                     
                     // Set focus to the new section for accessibility
-                    targetSection.focus();
+                    targetSection.setAttribute('tabindex', '-1');
+                    targetSection.focus({preventScroll: true});
                 }
             });
             
@@ -213,6 +216,14 @@
                     targetSection.classList.add('active');
                 }
             }
+            
+            // Add mousedown event listener to remove focus from buttons after click
+            document.addEventListener('mousedown', function() {
+                // This will remove focus from any element when clicking elsewhere
+                if (document.activeElement && document.activeElement.blur) {
+                    document.activeElement.blur();
+                }
+            });
         });
     </script>
 </body>
