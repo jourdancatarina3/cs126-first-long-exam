@@ -727,6 +727,22 @@ footer {
     .nutrition-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+    
+    .user-interaction {
+        flex-direction: column;
+    }
+    
+    .newsletter {
+        flex-direction: column;
+    }
+    
+    .newsletter-image {
+        display: none;
+    }
+    
+    .faq-section {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -789,6 +805,39 @@ footer {
     .social-icons {
         justify-content: center;
     }
+    
+    .additional-content {
+        padding: 1.5rem;
+    }
+    
+    .recipe-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .utility-buttons {
+        flex-direction: column;
+    }
+    
+    .utility-btn.wide {
+        width: 100%;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .faq-section {
+        padding: 1.5rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
 }
 
 /* For smaller mobile devices */
@@ -836,6 +885,42 @@ footer {
     
     .star-rating i {
         font-size: 1.5rem;
+    }
+    
+    .additional-content {
+        padding: 0.5rem;
+    }
+    
+    .comment {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .faq-section {
+        padding: 1rem;
+    }
+    
+    .faq-question {
+        padding: 1rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 1rem 1rem;
     }
 }
 
@@ -1204,9 +1289,180 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
+    transition: transform var(--transition-medium);
 }
 
-/* Responsive adjustments for additional content */
+/* FAQ Section Styles */
+.faq-section {
+    margin: 4rem 0;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 2.5rem;
+    transition: box-shadow var(--transition-medium);
+}
+
+.faq-section:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.faq-section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+    border-radius: 4px 0 0 4px;
+}
+
+.faq-item.active::before {
+    transform: scaleY(1);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    padding-right: 2rem;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover h3 {
+    color: var(--primary-color);
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform var(--transition-medium), background-color var(--transition-medium);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.faq-toggle:hover {
+    background-color: rgba(255, 107, 107, 0.2);
+    transform: scale(1.1);
+}
+
+.faq-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+.faq-toggle i {
+    transition: transform var(--transition-medium);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 
+        max-height 0.5s cubic-bezier(0, 1, 0, 1),
+        opacity 0.3s ease,
+        transform 0.4s ease,
+        padding 0.3s ease;
+    padding: 0 1.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    transition: 
+        max-height 1s ease-in-out,
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        padding 0.3s ease;
+    padding: 0 1.5rem 1.5rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item.active .faq-toggle i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-question {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.faq-item.active {
+    background-color: var(--card-bg);
+}
+
+.faq-answer p {
+    margin-bottom: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 
+        transform 0.4s ease 0.1s,
+        opacity 0.4s ease 0.1s;
+}
+
+.faq-item.active .faq-answer p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 @media (max-width: 1024px) {
     .user-interaction {
         grid-template-columns: 1fr;
@@ -1219,11 +1475,15 @@ footer {
     .newsletter-image {
         display: none;
     }
+    
+    .faq-section {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
     .additional-content {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .recipe-cards {
@@ -1231,11 +1491,11 @@ footer {
     }
     
     .utility-buttons {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
     
     .utility-btn.wide {
-        grid-column: span 1;
+        width: 100%;
     }
     
     .newsletter-form {
@@ -1244,22 +1504,52 @@ footer {
     
     .newsletter-form button {
         width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .faq-section {
+        padding: 1.5rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     .additional-content {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     
     .comment {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: flex-start;
     }
     
     .comment-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+    }
+    
+    .faq-section {
+        padding: 1rem;
+    }
+    
+    .faq-question {
+        padding: 1rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 1rem 1rem;
     }
 } 

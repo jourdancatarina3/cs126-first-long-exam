@@ -460,6 +460,71 @@
                     </div>
                 </div>
             </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What type of flour works best for pizza dough?</h3>
+                            <button class="faq-toggle" aria-label="Toggle answer">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While all-purpose flour works well for homemade pizza, bread flour or "00" flour (Italian-style flour) will give you a chewier, more authentic crust due to their higher protein content. You can also use a mix of whole wheat and white flour for a healthier option.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I make the dough ahead of time?</h3>
+                            <button class="faq-toggle" aria-label="Toggle answer">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Pizza dough can be made up to 3 days ahead and stored in the refrigerator. In fact, cold fermentation improves flavor and texture. You can also freeze pizza dough for up to 3 months. Just thaw overnight in the refrigerator before using.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Why isn't my pizza crust crispy?</h3>
+                            <button class="faq-toggle" aria-label="Toggle answer">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For a crispy crust, make sure your oven is fully preheated to a high temperature (475°F/245°C or higher). Using a pizza stone or steel that's been preheated for at least 30 minutes helps. Also, avoid overloading your pizza with too many wet toppings, and make sure your dough isn't too thick in the center.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What's the best cheese for homemade pizza?</h3>
+                            <button class="faq-toggle" aria-label="Toggle answer">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Low-moisture mozzarella is the classic choice for pizza as it melts well without making the crust soggy. For extra flavor, try mixing in some freshly grated Parmesan, provolone, or fontina. Fresh mozzarella is delicious too, but drain it well before using to avoid excess moisture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I make pizza without a pizza stone?</h3>
+                            <button class="faq-toggle" aria-label="Toggle answer">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! While a pizza stone helps create a crispy crust, you can use an inverted baking sheet, cast iron skillet, or even a regular baking sheet. Preheating any of these will help. You can also make pan pizza in a well-oiled baking pan for a different but equally delicious style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="newsletter">
                 <div class="newsletter-content">
@@ -673,6 +738,65 @@
                     }
                 });
             }
+            
+            // FAQ section functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    
+                    // Check if this item is already active
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items first with a staggered delay for smoother animation
+                    document.querySelectorAll('.faq-item.active').forEach((item, index) => {
+                        if (item !== faqItem) {
+                            setTimeout(() => {
+                                item.classList.remove('active');
+                            }, index * 50); // Staggered closing for multiple open items
+                        }
+                    });
+                    
+                    // Toggle the clicked item (open if it was closed, leave closed if it was open)
+                    if (!isActive) {
+                        // Small delay before opening to allow previous items to start closing
+                        setTimeout(() => {
+                            faqItem.classList.add('active');
+                            
+                            // Scroll into view if needed, with smooth behavior
+                            const itemRect = faqItem.getBoundingClientRect();
+                            const isPartiallyVisible = 
+                                itemRect.top >= 0 &&
+                                itemRect.bottom <= window.innerHeight;
+                                
+                            if (!isPartiallyVisible) {
+                                faqItem.scrollIntoView({ 
+                                    behavior: 'smooth', 
+                                    block: 'nearest' 
+                                });
+                            }
+                        }, 50);
+                    } else {
+                        faqItem.classList.remove('active');
+                    }
+                });
+                
+                // Add keyboard accessibility
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+            
+            // Make the first FAQ item active by default for better UX
+            setTimeout(() => {
+                const firstFaqItem = document.querySelector('.faq-item');
+                if (firstFaqItem) {
+                    firstFaqItem.classList.add('active');
+                }
+            }, 500);
             
             // Debug check to ensure all sections are properly set up
             console.log('Available steps:');
