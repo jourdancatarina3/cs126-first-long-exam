@@ -10,6 +10,7 @@ This project is an accessible, step-by-step cooking guide where users can naviga
 - **Pure CSS Implementation**: All functionality is implemented using only HTML and CSS, no JavaScript.
 - **Responsive Design**: Adapts to different screen sizes.
 - **High-Quality Images**: Features beautiful cooking images from Unsplash.
+- **Dark Mode Support**: Toggle between light and dark themes with persistent preference saving.
 
 ## Accessibility Features
 
@@ -19,6 +20,8 @@ This project is an accessible, step-by-step cooking guide where users can naviga
 4. **Semantic Structure**: Clear heading hierarchy and semantic HTML elements.
 5. **High Contrast**: Good color contrast for readability.
 6. **Alt Text for Images**: All images include descriptive alt text for screen readers.
+7. **Dark Mode**: Reduces eye strain in low-light environments with a toggle that announces changes to screen readers.
+8. **Respects User Preferences**: Automatically applies the user's system preference for light/dark mode.
 
 ## How to Use
 
@@ -28,14 +31,17 @@ This project is an accessible, step-by-step cooking guide where users can naviga
    - Mouse clicks on the navigation buttons
    - Keyboard (Tab to focus on buttons, Enter to activate)
    - Screen reader (will announce the current step)
+4. Toggle between light and dark mode using the theme button in the top-right corner.
 
 ## Technical Implementation
 
 - Uses CSS `:target` selector to show the targeted step and hide others
 - Implements a carousel-like navigation pattern using only CSS
 - Leverages CSS visibility and display properties for accessibility
-- All functionality is achieved without JavaScript
-- Images are sourced from Unsplash and optimized for web display
+- Uses CSS variables for theming and color management
+- Implements dark mode with localStorage for preference persistence
+- Respects the user's system preference for color scheme
+- All images are sourced from Unsplash and optimized for web display
 
 ## Image Credits
 

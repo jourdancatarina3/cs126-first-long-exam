@@ -19,6 +19,16 @@
     --card-bg: #ffffff;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     
+    /* Dark Mode Colors - Improved for better contrast */
+    --dark-bg-color: #121212;
+    --dark-card-bg: #1e1e1e;
+    --dark-text-color: #f5f5f5;
+    --dark-text-light: #b0b0b0;
+    --dark-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --dark-border-color: #333333;
+    --dark-hover-color: #2a2a2a;
+    --dark-focus-color: rgba(255, 107, 107, 0.5);
+    
     /* Typography */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
@@ -27,6 +37,238 @@
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
     --transition-slow: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Dark Mode Class */
+body.dark-mode {
+    color: var(--dark-text-color);
+    background-color: var(--dark-bg-color);
+}
+
+body.dark-mode .recipe-sidebar,
+body.dark-mode .step,
+body.dark-mode .ingredients-panel, 
+body.dark-mode .nutrition-panel, 
+body.dark-mode .tips-panel,
+body.dark-mode .recipe-card,
+body.dark-mode .utility-card,
+body.dark-mode .comment,
+body.dark-mode .faq-item,
+body.dark-mode .newsletter {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--dark-card-shadow);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .nutrition-label {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode .meta-item,
+body.dark-mode .comment-header,
+body.dark-mode .faq-question {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .btn {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .btn:hover {
+    background-color: var(--primary-dark);
+}
+
+body.dark-mode .btn.prev {
+    background-color: var(--secondary-color);
+}
+
+body.dark-mode .btn.prev:hover {
+    background-color: var(--secondary-dark);
+}
+
+body.dark-mode .btn.restart {
+    background-color: var(--accent-color);
+}
+
+body.dark-mode .btn.restart:hover {
+    background-color: var(--accent-dark);
+}
+
+body.dark-mode .step-tip,
+body.dark-mode .success-tip {
+    background-color: rgba(29, 209, 161, 0.15);
+    border-color: var(--accent-color);
+}
+
+body.dark-mode .step-tip i,
+body.dark-mode .success-tip i {
+    color: var(--accent-color);
+}
+
+body.dark-mode .step-tip p,
+body.dark-mode .success-tip p {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: var(--dark-card-bg);
+    color: var(--dark-text-color);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode .progress-step {
+    background-color: var(--dark-border-color);
+}
+
+body.dark-mode .progress-step.active {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .img-badge {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .img-badge i {
+    color: #FFD700;
+}
+
+body.dark-mode .nutrition-value {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+body.dark-mode .nutrition-item {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .star-rating i {
+    color: #555;
+}
+
+body.dark-mode .star-rating i.fas {
+    color: #FFD700;
+}
+
+body.dark-mode .faq-toggle {
+    background-color: var(--dark-border-color);
+}
+
+body.dark-mode .faq-item.active .faq-toggle {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .comment-avatar {
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode .utility-btn {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode .utility-btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode footer {
+    border-top-color: var(--dark-border-color);
+}
+
+body.dark-mode .footer-section a {
+    color: var(--secondary-color);
+}
+
+body.dark-mode .footer-section a:hover {
+    color: var(--secondary-dark);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-medium);
+    border: none;
+    outline: none;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-dark);
+}
+
+.theme-toggle i {
+    font-size: 1.5rem;
+}
+
+body.dark-mode .theme-toggle {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: var(--secondary-dark);
+}
+
+/* Improve theme toggle focus state */
+.theme-toggle:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+body.dark-mode .theme-toggle:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    box-shadow: 0 0 0 5px rgba(72, 219, 251, 0.3);
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* Import Google Fonts */
@@ -46,6 +288,7 @@ body {
     margin: 0 auto;
     padding: 2rem;
     overflow-x: hidden;
+    transition: background-color var(--transition-medium), color var(--transition-medium);
 }
 
 /* Typography */
@@ -1551,5 +1794,581 @@ footer {
     
     .faq-item.active .faq-answer {
         padding: 0 1rem 1rem;
+    }
+}
+
+/* Improve scrollbar visibility in dark mode */
+body.dark-mode .step::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .step::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+body.dark-mode .step::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Improve FAQ section visibility */
+body.dark-mode .faq-section {
+    background-color: var(--dark-card-bg);
+}
+
+body.dark-mode .faq-item {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .faq-question:hover {
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+body.dark-mode .faq-item.active {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border-color);
+}
+
+/* Improve newsletter section visibility */
+body.dark-mode .newsletter-form input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--dark-border-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .newsletter-form input:focus {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Improve meta items visibility */
+body.dark-mode .meta-item {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .meta-item i {
+    color: var(--primary-color);
+}
+
+/* Improve progress indicator visibility */
+body.dark-mode .progress-indicator {
+    background-color: transparent;
+}
+
+/* Improve comment form visibility */
+body.dark-mode .add-comment {
+    border-top-color: var(--dark-border-color);
+}
+
+/* Improve focus states for dark mode */
+body.dark-mode .btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.5), 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+body.dark-mode .btn.prev:focus-visible {
+    box-shadow: 0 0 0 3px rgba(72, 219, 251, 0.5), 0 6px 15px rgba(72, 219, 251, 0.4);
+}
+
+body.dark-mode .btn.restart:focus-visible {
+    box-shadow: 0 0 0 3px rgba(29, 209, 161, 0.5), 0 6px 15px rgba(29, 209, 161, 0.4);
+}
+
+/* Improve image container visibility */
+body.dark-mode .img-container {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--dark-border-color);
+}
+
+/* Improve recipe cards in dark mode */
+body.dark-mode .additional-content {
+    background-color: var(--dark-bg-color);
+}
+
+body.dark-mode .recipe-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--dark-card-shadow);
+    border: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .recipe-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .recipe-card-content h3 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .recipe-card-content p {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode .recipe-card-meta {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode .recipe-card-meta i {
+    color: var(--primary-color);
+}
+
+body.dark-mode .btn-small {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .btn-small:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Add a subtle border to recipe card images in dark mode for better definition */
+body.dark-mode .recipe-card-img {
+    border-bottom: 1px solid var(--dark-border-color);
+}
+
+/* Improve contrast for related recipes heading */
+body.dark-mode .related-recipes h2::after {
+    background-color: var(--primary-color);
+}
+
+/* Improve recipe cards in dark mode - additional enhancements */
+body.dark-mode .recipe-card-img img {
+    filter: brightness(0.9);
+}
+
+/* Add a subtle overlay to recipe card images for better text contrast if images are displayed */
+body.dark-mode .recipe-card-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+/* Fix position relative for the image container to support the overlay */
+body.dark-mode .recipe-card-img {
+    position: relative;
+}
+
+/* Improve focus states for recipe card links in dark mode */
+body.dark-mode .btn-small:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.3);
+}
+
+/* Add a subtle transition effect when hovering over recipe cards in dark mode */
+body.dark-mode .recipe-card {
+    transition: transform var(--transition-medium), 
+                box-shadow var(--transition-medium), 
+                border-color var(--transition-medium);
+}
+
+/* Final improvements for the "You Might Also Like" section in dark mode */
+
+/* Ensure proper heading contrast */
+body.dark-mode .related-recipes h2 {
+    color: var(--dark-text-color);
+    border-bottom: none;
+}
+
+/* Add a subtle separator between recipe cards in dark mode for better visual distinction */
+body.dark-mode .recipe-cards {
+    gap: 2.5rem;
+}
+
+/* Improve spacing within recipe cards for better readability */
+body.dark-mode .recipe-card-content {
+    padding: 1.8rem;
+}
+
+/* Add a subtle highlight effect to recipe cards on focus for keyboard navigation */
+body.dark-mode .recipe-card:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+    outline: none;
+}
+
+/* Ensure proper contrast for placeholder images if the actual images fail to load */
+body.dark-mode img[src*="placeholder"] {
+    filter: brightness(0.8);
+    border: 1px solid var(--dark-border-color);
+}
+
+/* Improve Cook's Notes section in dark mode */
+body.dark-mode .comments-section {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--dark-card-shadow);
+    border: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .comments-section h2 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .comment {
+    border-bottom-color: var(--dark-border-color);
+}
+
+body.dark-mode .comment:last-child {
+    border-bottom: none;
+}
+
+body.dark-mode .comment-header h4 {
+    color: var(--dark-text-color);
+    font-weight: 600;
+}
+
+body.dark-mode .comment-rating i {
+    color: #FFD700; /* Gold color for stars */
+}
+
+body.dark-mode .comment-rating i.far {
+    color: #555; /* Darker color for empty stars */
+}
+
+body.dark-mode .comment-content p {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode .comment-date {
+    color: var(--dark-text-light);
+    opacity: 0.8;
+}
+
+body.dark-mode .comment-avatar {
+    background-color: var(--dark-border-color);
+    color: var(--dark-text-color);
+    border: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .comment-avatar i {
+    color: var(--dark-text-color);
+}
+
+/* Improve add comment section */
+body.dark-mode .add-comment {
+    border-top: 1px solid var(--dark-border-color);
+}
+
+body.dark-mode .add-comment h4 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .comment-form textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--dark-border-color);
+    color: var(--dark-text-color);
+    resize: vertical;
+}
+
+body.dark-mode .comment-form textarea:focus {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+}
+
+body.dark-mode .comment-form textarea::placeholder {
+    color: var(--dark-text-light);
+    opacity: 0.7;
+}
+
+/* Add hover effect to comments in dark mode */
+body.dark-mode .comment:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Additional improvements for Cook's Notes section in dark mode */
+
+/* Improve spacing between comments */
+body.dark-mode .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Add subtle transition for hover effect */
+body.dark-mode .comment {
+    transition: background-color var(--transition-medium);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* Improve comment avatar styling */
+body.dark-mode .comment-avatar {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--dark-border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .comment-avatar i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Improve focus state for comment form */
+body.dark-mode .comment-form textarea:focus-visible {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+/* Improve button in comment form */
+body.dark-mode .comment-form .btn-small {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+}
+
+body.dark-mode .comment-form .btn-small:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .comment-form .btn-small:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+/* Add subtle separator between comment header and content */
+body.dark-mode .comment-header {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Improve heading style */
+body.dark-mode .comments-section h2::after {
+    background-color: var(--primary-color);
+}
+
+/* Final improvements for user interaction section in dark mode */
+
+/* Improve user interaction section layout */
+body.dark-mode .user-interaction {
+    gap: 2.5rem;
+}
+
+/* Add subtle background to the entire section */
+body.dark-mode .user-interaction {
+    background-color: transparent;
+    padding: 1rem 0;
+}
+
+/* Improve add comment section spacing */
+body.dark-mode .add-comment {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+/* Add subtle animation to comment form button */
+body.dark-mode .comment-form .btn-small {
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode .comment-form .btn-small::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width var(--transition-medium);
+    z-index: -1;
+}
+
+body.dark-mode .comment-form .btn-small:hover::before {
+    width: 100%;
+}
+
+/* Improve comment form layout */
+body.dark-mode .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Add subtle highlight to new comments */
+@keyframes highlightComment {
+    0% { background-color: rgba(255, 107, 107, 0.2); }
+    100% { background-color: transparent; }
+}
+
+body.dark-mode .comment.new {
+    animation: highlightComment 2s ease-out forwards;
+}
+
+/* Improve utility panel and buttons in dark mode */
+body.dark-mode .utility-panel {
+    gap: 2rem;
+}
+
+body.dark-mode .utility-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--dark-card-shadow);
+    border: 1px solid var(--dark-border-color);
+    padding: 1.8rem;
+}
+
+body.dark-mode .utility-card h3 {
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .utility-card h3 i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+body.dark-mode .utility-card p {
+    color: var(--dark-text-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Improve utility buttons visibility */
+body.dark-mode .utility-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+body.dark-mode .utility-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--dark-text-color);
+    border: 1px solid var(--dark-border-color);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+body.dark-mode .utility-btn i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    transition: color var(--transition-medium);
+}
+
+body.dark-mode .utility-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .utility-btn:hover i {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .utility-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .utility-btn.wide {
+    grid-column: span 2;
+    background-color: rgba(29, 209, 161, 0.1);
+    border-color: var(--accent-color);
+}
+
+body.dark-mode .utility-btn.wide i {
+    color: var(--accent-color);
+}
+
+body.dark-mode .utility-btn.wide:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-text-color);
+    border-color: var(--accent-color);
+}
+
+body.dark-mode .utility-btn.wide:hover i {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .utility-btn.wide:focus-visible {
+    box-shadow: 0 0 0 3px rgba(29, 209, 161, 0.3);
+}
+
+/* Additional improvements for utility panel in dark mode */
+
+/* Add subtle hover effect to utility cards */
+body.dark-mode .utility-card {
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+body.dark-mode .utility-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Add subtle animation to utility buttons */
+body.dark-mode .utility-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode .utility-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width var(--transition-medium);
+    z-index: -1;
+}
+
+body.dark-mode .utility-btn:hover::before {
+    width: 100%;
+}
+
+/* Improve active state for utility buttons */
+body.dark-mode .utility-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add subtle border to utility panel */
+body.dark-mode .utility-panel {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Improve responsive layout for utility buttons */
+@media (max-width: 480px) {
+    body.dark-mode .utility-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    body.dark-mode .utility-btn.wide {
+        grid-column: span 1;
     }
 } 
