@@ -1,0 +1,273 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #e67e22;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* Layout */
+header, footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.recipe {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+/* Step Sections */
+.step {
+    display: none; /* Hide all steps by default */
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Show the active step by default (intro) */
+.step.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+}
+
+/* Target selector for showing steps */
+.step:target {
+    display: block;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide the default active step when another step is targeted */
+.step:target ~ .step.active:not(:target) {
+    display: none;
+}
+
+/* Hide non-targeted steps when a step is targeted */
+.step:target ~ .step:not(:target) {
+    display: none;
+}
+
+/* When a step is targeted, it becomes the active step for screen readers */
+.step:target {
+    outline: none;
+}
+
+/* Image Containers and Images */
+.img-container {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+}
+
+.recipe-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover .recipe-img {
+    transform: scale(1.02);
+}
+
+/* For backward compatibility with any remaining placeholders */
+.img-placeholder {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+/* Navigation Buttons */
+.step-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+.btn:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+.prev {
+    background-color: #7f8c8d;
+}
+
+.prev:hover, .prev:focus {
+    background-color: #636e72;
+}
+
+.restart {
+    background-color: #2ecc71;
+}
+
+.restart:hover, .restart:focus {
+    background-color: #27ae60;
+}
+
+/* Focus styles for keyboard navigation */
+:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .recipe {
+        padding: 15px;
+    }
+    
+    .img-container {
+        max-height: 300px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Skip to content link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #e67e22;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus-within styles for container */
+.recipe:focus-within {
+    outline: 2px solid #3498db;
+}
+
+/* Ensure proper focus management */
+.step:target:focus {
+    outline: none;
+}
+
+/* Ensure proper contrast */
+footer {
+    color: #555;
+    margin-top: 30px;
+}
+
+/* CSS-only accessibility enhancements */
+/* Make the targeted section visible to screen readers */
+.step:not(:target) {
+    visibility: hidden;
+}
+
+.step:target, .step.active:not(:target) {
+    visibility: visible;
+}
+
+/* When no step is targeted, show the intro step */
+.step.active {
+    visibility: visible;
+}
+
+/* When a step is targeted, hide the intro step unless it's the target */
+.step:target ~ .step.active:not(:target) {
+    visibility: hidden;
+}
+
+/* Ensure the targeted step is focusable */
+.step:target {
+    tabindex: 0;
+} 
