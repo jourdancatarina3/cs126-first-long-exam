@@ -217,6 +217,22 @@ header h1::after {
     .news-container {
         grid-template-columns: 1fr;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        order: 1;
+        margin-bottom: 30px;
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        align-self: stretch;
+    }
+    
+    .newsfeed {
+        order: 2;
+        width: 100%;
     }
     
     header h1 {
@@ -233,11 +249,6 @@ header h1::after {
     
     .news-content h2 {
         font-size: 1.4rem;
-    }
-    
-    .sidebar {
-        margin-top: 20px;
-        position: static;
     }
 }
 
@@ -264,6 +275,7 @@ header h1::after {
     
     .sidebar {
         padding: 15px;
+        margin-bottom: 25px;
     }
     
     .sidebar h2 {
