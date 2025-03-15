@@ -17,6 +17,10 @@ a {
     color: black;
 }
 
+button {
+    cursor: pointer;
+}
+
 .top-nav {
     background-color: #DCEDFF;
     padding: 0 16px;
@@ -410,15 +414,6 @@ main .details {
     margin-right: 8px;
 }
 
-.details .thread {
-    padding: 8px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
-    height: 100%;
-}
-
 .details .thread .input {
     display: flex;
     gap: 8px;
@@ -429,4 +424,80 @@ main .details {
 .details .thread .input input {
     flex-grow: 1;
     height: 30px
+}
+
+
+/* Add this to your existing CSS */
+
+.details .thread {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
+    height: calc(100vh - 187px);
+    overflow-y: auto;
+}
+
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    border-bottom: 0.5px dotted #ccc;
+}
+
+.comment.reply {
+    margin-left: 24px;
+    padding-top: 16px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(128, 128, 128, 0.229);
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.comment-header .user {
+    color: #3B73BC;
+    font-weight: bold;
+}
+
+.comment-header .points {
+    color: gray;
+}
+
+.comment-header .time {
+    color: gray;
+}
+
+.comment-content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.comment-actions a {
+    font-size: 11px;
+    color: gray;
+    text-decoration: none;
+}
+
+.comment-actions a:hover {
+    text-decoration: underline;
+    color: #3B73BC;
 }
