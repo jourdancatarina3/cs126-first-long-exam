@@ -446,6 +446,22 @@ main .details {
     gap: 8px;
 }
 
+.comment-container {
+    display: flex;
+    gap: 4px;
+}
+
+.comment-container .votes {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-container .arrows {
+    height: 20px;
+    opacity: 40%;
+    cursor: pointer;
+}
+
 .comment {
     display: flex;
     flex-direction: column;
@@ -453,12 +469,14 @@ main .details {
     border-bottom: 0.5px dotted #ccc;
 }
 
-.comment.reply {
-    margin-left: 24px;
+.reply {
+    margin-left: 16px;
     padding-top: 16px;
-    padding-left: 16px;
+    padding-left: 8px;
     border-left: 2px solid rgba(128, 128, 128, 0.229);
     border-bottom: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment-header {
