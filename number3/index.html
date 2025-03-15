@@ -5,216 +5,486 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Cooking Guide - Homemade Pizza</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
         <h1>Homemade Pizza Recipe</h1>
+        <div class="recipe-meta">
+            <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <span>Prep: 30 min</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-fire"></i>
+                <span>Cook: 15 min</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-utensils"></i>
+                <span>Serves: 4</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-chart-simple"></i>
+                <span>Difficulty: Medium</span>
+            </div>
+        </div>
     </header>
 
     <main id="main-content">
         <article class="recipe">
-            <section id="intro" class="step active" tabindex="-1">
-                <h2>Introduction</h2>
-                <p>Welcome to our step-by-step guide for making a delicious homemade pizza! This recipe will guide you through creating a perfect pizza from scratch. Use the navigation buttons below to move through each step.</p>
-                <div class="img-container">
-                    <img src="images/introduction.jpg" 
-                         alt="Delicious homemade pizza with basil leaves on top" class="recipe-img">
+            <aside class="recipe-sidebar">
+                <div class="ingredients-panel">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <li>2 cups all-purpose flour</li>
+                        <li>1 packet active dry yeast</li>
+                        <li>1 tsp salt</li>
+                        <li>1 tbsp olive oil</li>
+                        <li>¾ cup warm water</li>
+                        <li>1 can crushed tomatoes</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 tbsp Italian herbs</li>
+                        <li>2 cups mozzarella cheese</li>
+                        <li>Your favorite toppings</li>
+                    </ul>
                 </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step1" class="btn next" aria-label="Go to step 1">Start Cooking</a>
-                </nav>
-            </section>
+                
+                <div class="nutrition-panel">
+                    <h3>Nutrition Facts</h3>
+                    <div class="nutrition-grid">
+                        <div class="nutrition-item">
+                            <span class="nutrition-value">320</span>
+                            <span class="nutrition-label">Calories</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="nutrition-value">14g</span>
+                            <span class="nutrition-label">Fat</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="nutrition-value">38g</span>
+                            <span class="nutrition-label">Carbs</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="nutrition-value">15g</span>
+                            <span class="nutrition-label">Protein</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tips-panel">
+                    <h3>Chef's Tips</h3>
+                    <ul class="tips-list">
+                        <li>For a crispier crust, preheat a pizza stone in the oven.</li>
+                        <li>Let the dough come to room temperature before shaping.</li>
+                        <li>Don't overload with toppings to ensure even cooking.</li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <div class="recipe-content">
+                <section id="intro" class="step active" tabindex="-1">
+                    <h2>Introduction</h2>
+                    <p>Welcome to our step-by-step guide for making a delicious homemade pizza! This recipe will guide you through creating a perfect pizza from scratch. Use the navigation buttons below to move through each step.</p>
+                    <div class="img-container">
+                        <img src="images/introduction.jpg" 
+                             alt="Delicious homemade pizza with basil leaves on top" class="recipe-img">
+                        <div class="img-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Staff Favorite</span>
+                        </div>
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>Homemade pizza is not only delicious but also allows you to customize toppings to your preference!</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn next" data-target="#step1" aria-label="Go to step 1">Start Cooking</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step active" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step1" class="step" tabindex="-1">
-                <h2>Step 1: Prepare the Dough</h2>
-                <p>In a large bowl, mix 2 cups of flour, 1 packet of active dry yeast, 1 teaspoon of salt, and 1 tablespoon of olive oil. Gradually add 3/4 cup of warm water while stirring until a dough forms.</p>
-                <div class="img-container">
-                    <img src="images/step1.jpg" 
-                         alt="Mixing pizza dough ingredients in a bowl" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#intro" class="btn prev" aria-label="Go back to introduction">Previous</a>
-                    <a href="#step2" class="btn next" aria-label="Go to step 2">Next</a>
-                </nav>
-            </section>
+                <section id="step1" class="step" tabindex="-1">
+                    <h2>Step 1: Prepare the Dough</h2>
+                    <p>In a large bowl, mix 2 cups of flour, 1 packet of active dry yeast, 1 teaspoon of salt, and 1 tablespoon of olive oil. Gradually add 3/4 cup of warm water while stirring until a dough forms.</p>
+                    <div class="img-container">
+                        <img src="images/step1.jpg" 
+                             alt="Mixing pizza dough ingredients in a bowl" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>The water should be warm (about 110°F/45°C) but not hot, as excessive heat can kill the yeast.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#intro" aria-label="Go back to introduction">Previous</button>
+                        <button class="btn next" data-target="#step2" aria-label="Go to step 2">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step active" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step2" class="step" tabindex="-1">
-                <h2>Step 2: Knead the Dough</h2>
-                <p>Turn the dough onto a floured surface and knead for about 5 minutes until smooth and elastic. Form into a ball.</p>
-                <div class="img-container">
-                    <img src="images/step2.jpg" 
-                         alt="Hands kneading pizza dough on a floured surface" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step1" class="btn prev" aria-label="Go back to step 1">Previous</a>
-                    <a href="#step3" class="btn next" aria-label="Go to step 3">Next</a>
-                </nav>
-            </section>
+                <section id="step2" class="step" tabindex="-1">
+                    <h2>Step 2: Knead the Dough</h2>
+                    <p>Turn the dough onto a floured surface and knead for about 5 minutes until smooth and elastic. Form into a ball.</p>
+                    <div class="img-container">
+                        <img src="images/step2.jpg" 
+                             alt="Hands kneading pizza dough on a floured surface" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>The dough is properly kneaded when it springs back when lightly pressed with a finger.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step1" aria-label="Go back to step 1">Previous</button>
+                        <button class="btn next" data-target="#step3" aria-label="Go to step 3">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step active" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step3" class="step" tabindex="-1">
-                <h2>Step 3: Let the Dough Rise</h2>
-                <p>Place the dough in an oiled bowl, cover with a damp cloth, and let it rise in a warm place for about 1 hour, or until doubled in size.</p>
-                <div class="img-container">
-                    <img src="images/step3.jpg" 
-                         alt="Pizza dough rising in a bowl covered with cloth" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step2" class="btn prev" aria-label="Go back to step 2">Previous</a>
-                    <a href="#step4" class="btn next" aria-label="Go to step 4">Next</a>
-                </nav>
-            </section>
+                <section id="step3" class="step" tabindex="-1">
+                    <h2>Step 3: Let the Dough Rise</h2>
+                    <p>Place the dough in an oiled bowl, cover with a damp cloth, and let it rise in a warm place for about 1 hour, or until doubled in size.</p>
+                    <div class="img-container">
+                        <img src="images/step3.jpg" 
+                             alt="Pizza dough rising in a bowl covered with cloth" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>For a quicker rise, place the bowl in a slightly warm oven (turned off) or near a warm appliance.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step2" aria-label="Go back to step 2">Previous</button>
+                        <button class="btn next" data-target="#step4" aria-label="Go to step 4">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step active" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step4" class="step" tabindex="-1">
-                <h2>Step 4: Prepare the Sauce</h2>
-                <p>In a saucepan, mix 1 can of crushed tomatoes, 2 cloves of minced garlic, 1 tablespoon of olive oil, and Italian herbs. Simmer for 10 minutes.</p>
-                <div class="img-container">
-                    <img src="images/step4.jpg" 
-                         alt="Homemade tomato sauce for pizza in a pan" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step3" class="btn prev" aria-label="Go back to step 3">Previous</a>
-                    <a href="#step5" class="btn next" aria-label="Go to step 5">Next</a>
-                </nav>
-            </section>
+                <section id="step4" class="step" tabindex="-1">
+                    <h2>Step 4: Prepare the Sauce</h2>
+                    <p>In a saucepan, mix 1 can of crushed tomatoes, 2 cloves of minced garlic, 1 tablespoon of olive oil, and Italian herbs. Simmer for 10 minutes.</p>
+                    <div class="img-container">
+                        <img src="images/step4.jpg" 
+                             alt="Homemade tomato sauce for pizza in a pan" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>For extra flavor, add a pinch of sugar to balance the acidity of the tomatoes.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step3" aria-label="Go back to step 3">Previous</button>
+                        <button class="btn next" data-target="#step5" aria-label="Go to step 5">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step active" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step5" class="step" tabindex="-1">
-                <h2>Step 5: Shape the Dough</h2>
-                <p>Punch down the risen dough and roll it out on a floured surface to your desired thickness. Transfer to a pizza pan or baking sheet.</p>
-                <div class="img-container">
-                    <img src="images/step5.jpg" 
-                         alt="Rolling out pizza dough on a floured surface" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step4" class="btn prev" aria-label="Go back to step 4">Previous</a>
-                    <a href="#step6" class="btn next" aria-label="Go to step 6">Next</a>
-                </nav>
-            </section>
+                <section id="step5" class="step" tabindex="-1">
+                    <h2>Step 5: Shape the Dough</h2>
+                    <p>Punch down the risen dough and roll it out on a floured surface to your desired thickness. Transfer to a pizza pan or baking sheet.</p>
+                    <div class="img-container">
+                        <img src="images/step5.jpg" 
+                             alt="Rolling out pizza dough on a floured surface" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>For an authentic touch, try stretching the dough by hand instead of using a rolling pin.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step4" aria-label="Go back to step 4">Previous</button>
+                        <button class="btn next" data-target="#step6" aria-label="Go to step 6">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step active" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step6" class="step" tabindex="-1">
-                <h2>Step 6: Add Toppings</h2>
-                <p>Spread the sauce over the dough, leaving a small border for the crust. Add cheese and your favorite toppings.</p>
-                <div class="img-container">
-                    <img src="images/step6.jpg" 
-                         alt="Adding toppings to a pizza before baking" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step5" class="btn prev" aria-label="Go back to step 5">Previous</a>
-                    <a href="#step7" class="btn next" aria-label="Go to step 7">Next</a>
-                </nav>
-            </section>
+                <section id="step6" class="step" tabindex="-1">
+                    <h2>Step 6: Add Toppings</h2>
+                    <p>Spread the sauce over the dough, leaving a small border for the crust. Add cheese and your favorite toppings.</p>
+                    <div class="img-container">
+                        <img src="images/step6.jpg" 
+                             alt="Adding toppings to a pizza before baking" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>For best results, place heavier toppings under the cheese to prevent them from drying out.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step5" aria-label="Go back to step 5">Previous</button>
+                        <button class="btn next" data-target="#step7" aria-label="Go to step 7">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step active" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="step7" class="step" tabindex="-1">
-                <h2>Step 7: Bake the Pizza</h2>
-                <p>Bake in a preheated oven at 475°F (245°C) for 10-15 minutes, or until the crust is golden and the cheese is bubbly.</p>
-                <div class="img-container">
-                    <img src="images/step7.jpg" 
-                         alt="Pizza baking in the oven" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step6" class="btn prev" aria-label="Go back to step 6">Previous</a>
-                    <a href="#final" class="btn next" aria-label="Go to final step">Next</a>
-                </nav>
-            </section>
+                <section id="step7" class="step" tabindex="-1">
+                    <h2>Step 7: Bake the Pizza</h2>
+                    <p>Bake in a preheated oven at 475°F (245°C) for 10-15 minutes, or until the crust is golden and the cheese is bubbly.</p>
+                    <div class="img-container">
+                        <img src="images/step7.jpg" 
+                             alt="Pizza baking in the oven" class="recipe-img">
+                    </div>
+                    <div class="step-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>For an extra crispy bottom, place the pizza on the lowest rack of the oven for the first few minutes.</p>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step6" aria-label="Go back to step 6">Previous</button>
+                        <button class="btn next" data-target="#final" aria-label="Go to final step">Next</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step active" data-step="step7"></div>
+                        <div class="progress-step" data-step="final"></div>
+                    </div>
+                </section>
 
-            <section id="final" class="step" tabindex="-1">
-                <h2>Enjoy Your Homemade Pizza!</h2>
-                <p>Let the pizza cool for a few minutes, then slice and serve. Enjoy your delicious homemade creation!</p>
-                <div class="img-container">
-                    <img src="images/step7.jpg" 
-                         alt="Finished homemade pizza sliced and ready to eat" class="recipe-img">
-                </div>
-                <nav class="step-nav" aria-label="Recipe navigation">
-                    <a href="#step7" class="btn prev" aria-label="Go back to step 7">Previous</a>
-                    <a href="#intro" class="btn restart" aria-label="Restart the recipe">Start Over</a>
-                </nav>
-            </section>
+                <section id="final" class="step" tabindex="-1">
+                    <h2>Enjoy Your Homemade Pizza!</h2>
+                    <p>Let the pizza cool for a few minutes, then slice and serve. Enjoy your delicious homemade creation!</p>
+                    <div class="img-container">
+                        <img src="images/step7.jpg" 
+                             alt="Finished homemade pizza sliced and ready to eat" class="recipe-img">
+                    </div>
+                    <div class="step-tip success-tip">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Congratulations! You've successfully made a homemade pizza from scratch. Pair it with a fresh salad for a complete meal.</p>
+                    </div>
+                    <div class="rating-container">
+                        <h3>How did your pizza turn out?</h3>
+                        <div class="star-rating">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <nav class="step-nav" aria-label="Recipe navigation">
+                        <button class="btn prev" data-target="#step7" aria-label="Go back to step 7">Previous</button>
+                        <button class="btn restart" data-target="#intro" aria-label="Restart the recipe">Start Over</button>
+                    </nav>
+                    <div class="progress-indicator">
+                        <div class="progress-step" data-step="intro"></div>
+                        <div class="progress-step" data-step="step1"></div>
+                        <div class="progress-step" data-step="step2"></div>
+                        <div class="progress-step" data-step="step3"></div>
+                        <div class="progress-step" data-step="step4"></div>
+                        <div class="progress-step" data-step="step5"></div>
+                        <div class="progress-step" data-step="step6"></div>
+                        <div class="progress-step" data-step="step7"></div>
+                        <div class="progress-step active" data-step="final"></div>
+                    </div>
+                </section>
+            </div>
         </article>
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>More Recipes</h3>
+                <ul>
+                    <li><a href="#">Pasta Carbonara</a></li>
+                    <li><a href="#">Chicken Parmesan</a></li>
+                    <li><a href="#">Garlic Bread</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Share This Recipe</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Share on Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
         <p>Interactive Cooking Guide - Created for CS126 Exam</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get all navigation links
-            const navLinks = document.querySelectorAll('.step-nav a');
+            // Initial setup - ensure intro is active if no hash
+            if (!window.location.hash) {
+                const introSection = document.getElementById('intro');
+                if (introSection) {
+                    document.querySelectorAll('.step').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    introSection.classList.add('active');
+                    updateProgressIndicator('intro');
+                }
+            }
             
-            // Add click event listeners to all navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
+            // Direct navigation function
+            function navigateToStep(currentStepId, targetStepId, isNext = true) {
+                const currentSection = document.getElementById(currentStepId);
+                const targetSection = document.getElementById(targetStepId);
+                
+                if (!currentSection || !targetSection) {
+                    console.error('Navigation error:', currentStepId, targetStepId);
+                    return;
+                }
+                
+                console.log('Navigating from', currentStepId, 'to', targetStepId);
+                
+                // Add exit animation class to current section
+                currentSection.classList.add(isNext ? 'exit-to-left' : 'exit-to-right');
+                
+                // After exit animation completes, update active class and show new section
+                setTimeout(() => {
+                    // Remove active class from current section
+                    currentSection.classList.remove('active');
+                    currentSection.classList.remove('exit-to-left', 'exit-to-right');
                     
+                    // Add active class to target section
+                    targetSection.classList.add('active');
+                    targetSection.classList.add(isNext ? 'enter-from-right' : 'enter-from-left');
+                    
+                    // Update URL hash without scrolling
+                    history.pushState(null, null, '#' + targetStepId);
+                    
+                    // Set focus to the new section for accessibility
+                    targetSection.setAttribute('tabindex', '-1');
+                    targetSection.focus({preventScroll: true});
+                    
+                    // Update progress indicator
+                    updateProgressIndicator(targetStepId);
+                    
+                    // Remove entrance animation class after animation completes
+                    setTimeout(() => {
+                        targetSection.classList.remove('enter-from-right', 'enter-from-left');
+                    }, 500);
+                }, 300);
+            }
+            
+            // Get all navigation buttons
+            const navButtons = document.querySelectorAll('.step-nav button');
+            
+            // Add click event listeners to all navigation buttons
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
                     // Get the target section ID
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
+                    const targetId = this.getAttribute('data-target');
+                    if (!targetId || !targetId.startsWith('#')) return;
+                    
+                    const targetStepId = targetId.substring(1);
                     
                     // Get the current active section
                     const currentSection = document.querySelector('.step.active');
+                    if (!currentSection) return;
                     
                     // Determine direction for animation
                     const isNext = this.classList.contains('next') || this.classList.contains('restart');
                     
-                    // Add exit animation class to current section
-                    currentSection.classList.add(isNext ? 'exit-to-left' : 'exit-to-right');
-                    
-                    // After exit animation completes, update active class and show new section
-                    setTimeout(() => {
-                        // Remove active class from current section
-                        currentSection.classList.remove('active');
-                        currentSection.classList.remove('exit-to-left', 'exit-to-right');
-                        
-                        // Add active class to target section
-                        targetSection.classList.add('active');
-                        targetSection.classList.add(isNext ? 'enter-from-right' : 'enter-from-left');
-                        
-                        // Update URL hash without scrolling
-                        history.pushState(null, null, targetId);
-                        
-                        // Set focus to the new section for accessibility
-                        // Use programmatic focus to avoid visible focus ring
-                        targetSection.setAttribute('tabindex', '-1');
-                        targetSection.focus({preventScroll: true});
-                        
-                        // Remove entrance animation class after animation completes
-                        setTimeout(() => {
-                            targetSection.classList.remove('enter-from-right', 'enter-from-left');
-                        }, 500);
-                    }, 300);
+                    navigateToStep(currentSection.id, targetStepId, isNext);
                 });
             });
             
-            // Handle browser back/forward buttons
-            window.addEventListener('popstate', function() {
+            // Handle direct navigation via URL hash on page load
+            function handleHashChange() {
                 const targetId = window.location.hash || '#intro';
-                const targetSection = document.querySelector(targetId);
+                const targetStepId = targetId.substring(1);
+                const targetSection = document.getElementById(targetStepId);
                 
                 if (targetSection) {
                     // Remove active class from all sections
                     document.querySelectorAll('.step').forEach(section => {
                         section.classList.remove('active');
+                        section.classList.remove('enter-from-right', 'enter-from-left');
                     });
                     
                     // Add active class to target section
                     targetSection.classList.add('active');
                     
+                    // Update progress indicator
+                    updateProgressIndicator(targetStepId);
+                    
                     // Set focus to the new section for accessibility
                     targetSection.setAttribute('tabindex', '-1');
                     targetSection.focus({preventScroll: true});
                 }
-            });
+            }
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', handleHashChange);
             
             // Ensure the correct section is shown on page load
             if (window.location.hash) {
-                const targetSection = document.querySelector(window.location.hash);
-                if (targetSection) {
-                    document.querySelectorAll('.step').forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    targetSection.classList.add('active');
-                }
+                handleHashChange();
             }
             
             // Add mousedown event listener to remove focus from buttons after click
@@ -223,6 +493,66 @@
                 if (document.activeElement && document.activeElement.blur) {
                     document.activeElement.blur();
                 }
+            });
+            
+            // Star rating functionality
+            const stars = document.querySelectorAll('.star-rating i');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.getAttribute('data-rating');
+                    // Reset all stars
+                    stars.forEach(s => {
+                        s.className = 'far fa-star';
+                        s.classList.remove('selected');
+                    });
+                    // Fill stars up to the selected rating
+                    for (let i = 0; i < rating; i++) {
+                        stars[i].className = 'fas fa-star';
+                        stars[i].classList.add('selected');
+                    }
+                });
+                
+                star.addEventListener('mouseover', function() {
+                    const rating = this.getAttribute('data-rating');
+                    // Reset all stars
+                    stars.forEach(s => {
+                        if (!s.classList.contains('selected')) {
+                            s.className = 'far fa-star';
+                        }
+                    });
+                    // Fill stars up to the hovered rating
+                    for (let i = 0; i < rating; i++) {
+                        if (!stars[i].classList.contains('selected')) {
+                            stars[i].className = 'fas fa-star';
+                        }
+                    }
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    // Reset to the selected rating or all empty
+                    stars.forEach(s => {
+                        if (!s.classList.contains('selected')) {
+                            s.className = 'far fa-star';
+                        }
+                    });
+                });
+            });
+            
+            // Function to update progress indicator
+            function updateProgressIndicator(stepId) {
+                const progressSteps = document.querySelectorAll('.progress-step');
+                progressSteps.forEach(step => {
+                    step.classList.remove('active');
+                    if (step.getAttribute('data-step') === stepId) {
+                        step.classList.add('active');
+                    }
+                });
+            }
+            
+            // Debug check to ensure all sections are properly set up
+            console.log('Available steps:');
+            document.querySelectorAll('.step').forEach(step => {
+                console.log(step.id, step.classList.contains('active'));
             });
         });
     </script>
