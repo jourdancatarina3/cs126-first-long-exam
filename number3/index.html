@@ -74,7 +74,7 @@
             </aside>
             
             <div class="recipe-content">
-                <section id="intro" class="step active" tabindex="-1">
+                <section id="intro" class="step active" tabindex="0">
                     <h2>Introduction</h2>
                     <p>Welcome to our step-by-step guide for making a delicious homemade pizza! This recipe will guide you through creating a perfect pizza from scratch. Use the navigation buttons below to move through each step.</p>
                     <div class="img-container">
@@ -90,7 +90,7 @@
                         <p>Homemade pizza is not only delicious but also allows you to customize toppings to your preference!</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn next" data-target="#step1" aria-label="Go to step 1">Start Cooking</button>
+                        <a href="#step1" class="btn next" aria-label="Go to step 1">Start Cooking</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step active" data-step="intro"></div>
@@ -117,8 +117,8 @@
                         <p>The water should be warm (about 110°F/45°C) but not hot, as excessive heat can kill the yeast.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#intro" aria-label="Go back to introduction">Previous</button>
-                        <button class="btn next" data-target="#step2" aria-label="Go to step 2">Next</button>
+                        <a href="#intro" class="btn prev" aria-label="Go back to introduction">Previous</a>
+                        <a href="#step2" class="btn next" aria-label="Go to step 2">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -145,8 +145,8 @@
                         <p>The dough is properly kneaded when it springs back when lightly pressed with a finger.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step1" aria-label="Go back to step 1">Previous</button>
-                        <button class="btn next" data-target="#step3" aria-label="Go to step 3">Next</button>
+                        <a href="#step1" class="btn prev" aria-label="Go back to step 1">Previous</a>
+                        <a href="#step3" class="btn next" aria-label="Go to step 3">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -173,8 +173,8 @@
                         <p>For a quicker rise, place the bowl in a slightly warm oven (turned off) or near a warm appliance.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step2" aria-label="Go back to step 2">Previous</button>
-                        <button class="btn next" data-target="#step4" aria-label="Go to step 4">Next</button>
+                        <a href="#step2" class="btn prev" aria-label="Go back to step 2">Previous</a>
+                        <a href="#step4" class="btn next" aria-label="Go to step 4">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -201,8 +201,8 @@
                         <p>For extra flavor, add a pinch of sugar to balance the acidity of the tomatoes.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step3" aria-label="Go back to step 3">Previous</button>
-                        <button class="btn next" data-target="#step5" aria-label="Go to step 5">Next</button>
+                        <a href="#step3" class="btn prev" aria-label="Go back to step 3">Previous</a>
+                        <a href="#step5" class="btn next" aria-label="Go to step 5">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -229,8 +229,8 @@
                         <p>For an authentic touch, try stretching the dough by hand instead of using a rolling pin.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step4" aria-label="Go back to step 4">Previous</button>
-                        <button class="btn next" data-target="#step6" aria-label="Go to step 6">Next</button>
+                        <a href="#step4" class="btn prev" aria-label="Go back to step 4">Previous</a>
+                        <a href="#step6" class="btn next" aria-label="Go to step 6">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -257,8 +257,8 @@
                         <p>For best results, place heavier toppings under the cheese to prevent them from drying out.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step5" aria-label="Go back to step 5">Previous</button>
-                        <button class="btn next" data-target="#step7" aria-label="Go to step 7">Next</button>
+                        <a href="#step5" class="btn prev" aria-label="Go back to step 5">Previous</a>
+                        <a href="#step7" class="btn next" aria-label="Go to step 7">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -285,8 +285,8 @@
                         <p>For an extra crispy bottom, place the pizza on the lowest rack of the oven for the first few minutes.</p>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step6" aria-label="Go back to step 6">Previous</button>
-                        <button class="btn next" data-target="#final" aria-label="Go to final step">Next</button>
+                        <a href="#step6" class="btn prev" aria-label="Go back to step 6">Previous</a>
+                        <a href="#final" class="btn next" aria-label="Go to final step">Next</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -323,8 +323,8 @@
                         </div>
                     </div>
                     <nav class="step-nav" aria-label="Recipe navigation">
-                        <button class="btn prev" data-target="#step7" aria-label="Go back to step 7">Previous</button>
-                        <button class="btn restart" data-target="#intro" aria-label="Restart the recipe">Start Over</button>
+                        <a href="#step7" class="btn prev" aria-label="Go back to step 7">Previous</a>
+                        <a href="#intro" class="btn restart" aria-label="Restart the recipe">Start Over</a>
                     </nav>
                     <div class="progress-indicator">
                         <div class="progress-step" data-step="intro"></div>
@@ -557,13 +557,13 @@
             }
             
             // Get all navigation buttons
-            const navButtons = document.querySelectorAll('.step-nav button');
+            const navButtons = document.querySelectorAll('.step-nav a');
             
             // Add click event listeners to all navigation buttons
             navButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     // Get the target section ID
-                    const targetId = this.getAttribute('data-target');
+                    const targetId = this.getAttribute('href');
                     if (!targetId || !targetId.startsWith('#')) return;
                     
                     const targetStepId = targetId.substring(1);
