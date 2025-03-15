@@ -136,5 +136,84 @@
     <footer>
         <p>Interactive Cooking Guide - Created for CS126 Exam</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.step-nav a');
+            
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target section ID
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // Get the current active section
+                    const currentSection = document.querySelector('.step.active');
+                    
+                    // Determine direction for animation
+                    const isNext = this.classList.contains('next') || this.classList.contains('restart');
+                    
+                    // Add exit animation class to current section
+                    currentSection.classList.add(isNext ? 'exit-to-left' : 'exit-to-right');
+                    
+                    // After exit animation completes, update active class and show new section
+                    setTimeout(() => {
+                        // Remove active class from current section
+                        currentSection.classList.remove('active');
+                        currentSection.classList.remove('exit-to-left', 'exit-to-right');
+                        
+                        // Add active class to target section
+                        targetSection.classList.add('active');
+                        targetSection.classList.add(isNext ? 'enter-from-right' : 'enter-from-left');
+                        
+                        // Update URL hash without scrolling
+                        history.pushState(null, null, targetId);
+                        
+                        // Set focus to the new section for accessibility
+                        targetSection.focus();
+                        
+                        // Remove entrance animation class after animation completes
+                        setTimeout(() => {
+                            targetSection.classList.remove('enter-from-right', 'enter-from-left');
+                        }, 500);
+                    }, 300);
+                });
+            });
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                const targetId = window.location.hash || '#intro';
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Remove active class from all sections
+                    document.querySelectorAll('.step').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Add active class to target section
+                    targetSection.classList.add('active');
+                    
+                    // Set focus to the new section for accessibility
+                    targetSection.focus();
+                }
+            });
+            
+            // Ensure the correct section is shown on page load
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    document.querySelectorAll('.step').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    targetSection.classList.add('active');
+                }
+            }
+        });
+    </script>
 </body>
 </html> 
